@@ -1,0 +1,24 @@
+.si-menu{
+	display: none;
+	position: absolute;
+	padding-left: 0;
+	border: 1px solid #ccc;
+	font-family: 'Century Gothic', 'Microsoft YaHei', Verdana;
+	box-shadow: 2px 3px 2px rgba(234,234,236,.6);
+	font-size: 14px;
+	background-color: #fff;
+	list-style-type: none;
+	z-index: 999;
+}
+.si-sep{
+	padding-top: 4px;
+	border-bottom: 1px inset #ccc;
+	margin-bottom: 4px;
+}
+.si-item{
+	padding: 2px 4px;
+	cursor: default;
+}
+.si-item.si-hover,.si-item:hover{
+	background-color: #ececec;
+}
