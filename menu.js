@@ -19,18 +19,23 @@ jQuery.fn.extend({
 			menu = $('<ul></ul>');
 			menu.addClass('si-menu');
 			len = items.length;
+			console.log(len);
 			for (i = 0; i < len; ++i) {
-				var li = $('<li></li>');
-				if (items[i].separator) {
-					li.addClass('si-sep');
-					menu.append(li);
+				var li;
+				if (!(items[i] instanceof Object)) {
 					continue;
-				} else if(items[i].item){
+				}
+				li = $('<li></li>');
+				if(items[i].item){
 					li.addClass('si-item');
 					li.text(items[i].item);
 					if (items[i].callback instanceof Function) {
 						li.on('click',items[i].callback);
 					}
+					menu.append(li);
+					continue;
+				} else if (items[i]['separator']) {
+					li.addClass('si-sep');
 					menu.append(li);
 					continue;
 				}
@@ -49,8 +54,13 @@ jQuery.fn.extend({
 			menu.appendTo($(document.body));
 			this.on('mouseup',function  (event) {
 				var pos;
+				event = event || window.event;
 				if (event.which === 3) {
-					event.stopPropagation();
+					if (event.stopPropagation) {
+						event.stopPropagation();
+					} else {
+						event.cancelBubble  = true;
+					}
 					pos = getCurPos(event);
 					menu.css({'top':pos.y + 'px','left': pos.x + 'px', 'display': 'block'});
 				}

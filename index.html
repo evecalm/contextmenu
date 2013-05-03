@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>menu</title>
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    #tt{
+      float: left;
+      width: 500px;
+      height: 600px;
+      border: 1px solid #ccc;
+    }
+    #ll{
+      float: right;
+      width: 300px;
+      height: 500px;
+      border: 1px solid #088;
+    }
+  </style>
+</head>
+<body>
+ <ul class="si-menu">
+    <li class="si-item">hello</li>
+   <li class="si-sep"></li>
+    <li class="si-item">wordsdfsdfsdfsd</li>
+ </ul>
+ <div id="tt"></div>
+ <div id="ll"></div>
+  <script src="../search/jquery.min.js"></script>
+  <script src="menu.js"></script>
+  <script>
+    $('#tt').menu([
+      {item:'beijings',callback:function  () { alert('hello');}},
+      {separator:true},
+      {item:'not support'},
+      {item:'four seasons'},
+      {item:'lov'},
+      {item:'Hach\'s dream'},
+      {item:'May U come?'},
+      {item:'That is very toung.'},
+      {item:'test'},
+      {item:'test'}
+    ]);
+    $('#ll').menu([
+      {item:'lov'},
+      {separator:true},
+      {item:'Hach\'s dream'},
+      {separator:true},
+      {item:'May U come?'}
+    ]);
+  </script>
+</body>
+</html>

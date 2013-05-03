@@ -5,6 +5,7 @@
 	border: 1px solid #ccc;
 	font-family: 'Century Gothic', 'Microsoft YaHei', Verdana;
 	box-shadow: 2px 3px 2px rgba(234,234,236,.6);
+	text-shadow: 1px 2px 4px rgba(199,199,199,.6);
 	font-size: 14px;
 	background-color: #fff;
 	list-style-type: none;
@@ -14,6 +15,10 @@
 	padding-top: 4px;
 	border-bottom: 1px inset #ccc;
 	margin-bottom: 4px;
+	/* for ie 7 and ealier*/
+	*padding-top: 3px;
+	*line-height: 0;
+	*font-size: 0;
 }
 .si-item{
 	padding: 2px 4px;
