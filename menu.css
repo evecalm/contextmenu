@@ -2,6 +2,8 @@
 	display: none;
 	position: absolute;
 	padding-left: 0;
+	color: #333;
+	font-weight: 400;
 	border: 1px solid #ccc;
 	font-family: 'Century Gothic', 'Microsoft YaHei', Verdana;
 	box-shadow: 2px 3px 2px rgba(234,234,236,.6);
