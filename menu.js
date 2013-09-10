@@ -1,6 +1,6 @@
 jQuery.fn.extend({
 	menu: function  (items) {
-		var menu,len,i,menuItems;
+		var menu,len,i;
 		this.on('contextmenu',function  (event) {
 			return false;
 		});
@@ -45,12 +45,11 @@ jQuery.fn.extend({
 					}
 					menu.append(li);
 					continue;
-				} else if (items[i]['separator']) {
+				} else if (items[i].separator) {
 					li.addClass('si-sep');
 					menu.append(li);
 					continue;
 				}
-				li = null;
 			}
 			menu.on('contextmenu',function  () {
 				return false;
